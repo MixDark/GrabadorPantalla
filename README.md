@@ -62,4 +62,5 @@ python main.py
 
 ## Estructura del proyecto
 
-![image](https://github.com/user-attachments/assets/3a3c7eee-d9d0-403b-91da-fc03c3b73088)
+![image](https://github.com/user-attachments/assets/07d90220-c425-421b-98f4-70364a31766e)
+
