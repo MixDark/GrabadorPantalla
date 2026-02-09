@@ -1,4 +1,4 @@
-# 🎬 Grabador de Pantalla
+# 🎬 Grabador de pantalla
 
 Una aplicación profesional de grabación de pantalla desarrollada en Python con interfaz gráfica PyQt6, diseñada para capturar, procesar y guardar videos de alta calidad.
 
@@ -6,9 +6,10 @@ Una aplicación profesional de grabación de pantalla desarrollada en Python con
 
 ### 🎥 Grabación de video
 - ✅ Soporte para múltiples pantallas/monitores
-- ✅ Grabación en tiempo real con FPS ajustable (actualmente 15 FPS)
+- ✅ Grabación en tiempo real con FPS ajustable (hasta 60 FPS)
 - ✅ Múltiples formatos de salida: MP4, AVI, MOV
 - ✅ Captura de región completa de la pantalla
+- ✅ **Novedad**: Superposición de cámara web integrada durante la grabación
 
 ### 🎙️ Audio
 - ✅ Grabación de audio del micrófono
@@ -28,37 +29,34 @@ Una aplicación profesional de grabación de pantalla desarrollada en Python con
 - ✅ Minimizar ventana automáticamente al iniciar
 
 ### 📊 Interfaz de usuario
-- ✅ Interfaz con 3 pestañas (Grabación, Configuraciones, Registro)
+- ✅ Interfaz moderna con 3 pestañas (Grabación, Configuración, Registro)
 - ✅ Previsualizaciones de pantallas disponibles
 - ✅ Contador de tiempo en vivo
-- ✅ Barra de progreso
-- ✅ Registro de eventos detallado
-
-### 📁 Gestión de archivos
-- ✅ Seleccionar ubicación personalizada para grabaciones
-- ✅ Acceso rápido a la carpeta de grabaciones
-- ✅ Verificación de archivos existentes antes de sobrescribir
+- ✅ Barra de progreso de audio
+- ✅ Registro de eventos detallado con soporte UTF-8
 
 ## 🚀 Requisitos previos
 
 ### Sistema operativo
-- Windows 10/11 (actualmente optimizado para Windows con APIs específicas)
+- Windows 10/11 (Optimizado para Windows)
 
 ### Python
 - Python 3.10 o superior
 
 ### Dependencias del sistema
-- FFmpeg (recomendado para mejor compatibilidad de video)
+- **FFmpeg (Obligatorio)**: Debe estar en la carpeta raíz del proyecto.
+  - 📥 **Descargar desde aquí**: [Enlace a Google Drive](https://drive.google.com/drive/folders/1LldbJ0mdY4YXQpSTvOXh2dFk8FeLKUj-?usp=drive_link)
+  - Descomprima los archivos `ffmpeg.exe`, `ffplay.exe` y `ffprobe.exe` directamente en la carpeta principal del grabador.
 
 ## 📦 Instalación
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/tu-usuario/grabador-pantalla.git
-cd grabador-pantalla
+git clone https://github.com/MixDark/GrabadorPantalla.git
+cd GrabadorPantalla
 ```
 
-### 2. Crear entorno virtual (opcional pero recomendado)
+### 2. Crear entorno virtual (Recomendado)
 ```bash
 python -m venv venv
 venv\Scripts\activate  # En Windows
@@ -69,12 +67,6 @@ venv\Scripts\activate  # En Windows
 pip install -r requirements.txt
 ```
 
-### 4. Instalar dependencias del sistema (Windows)
-```bash
-pip install pypiwin32
-python Scripts/pywin32_postinstall.py -install
-```
-
 ## 🎯 Uso
 
 ### Ejecutar la aplicación
@@ -83,124 +75,13 @@ python main.py
 ```
 
 ### Flujo básico:
-1. **Seleccionar pantalla**: Elige la pantalla/monitor a grabar
-2. **Configurar opciones**: Ajusta nombre, formato, audio y cursor
-3. **Iniciar grabación**: Presiona "Iniciar" o usa el atajo de teclado
-4. **Detener grabación**: Presiona "Detener" o usa el atajo
-5. **Esperar procesamiento**: El video se procesa y guarda automáticamente
-
-## ⚙️ Configuración
-
-La aplicación permite personalizar:
-
-- **Nombre de archivo**: Nombre personalizado para la grabación
-- **Formato**: .mp4, .avi, .mov
-- **Ubicación**: Dónde guardar las grabaciones
-- **Audio del micrófono**: Activar/desactivar y ajustar volumen
-- **Audio del sistema**: Activar/desactivar y ajustar volumen
-- **Estilo del cursor**: Diferentes opciones de visualización
-- **Atajo de teclado**: Configurar combinación para iniciar/detener
-- **Minimizar al iniciar**: Ocultar ventana automáticamente
-
-## 📝 Registro de eventos
-
-Todos los eventos de la aplicación se registran en:
-- **Pantalla**: En la pestaña "Registro de eventos"
-- **Archivo**: En `app.log` en el directorio raíz
-
-## 🛠️ Estructura del proyecto
-
-```
-grabador-pantalla/
-├── main.py                 # Aplicación principal
-├── requirements.txt        # Dependencias Python
-├── README.md              # Este archivo
-├── CHANGELOG.md           # Historial de cambios
-├── .gitignore             # Archivos a ignorar en git
-├── app.log                # Registro de eventos
-└── grabaciones/           # Carpeta de grabaciones
-    └── tmp/               # Archivos temporales durante grabación
-```
-
-## 🐛 Solución de problemas
-
-### Problema: "El micrófono no se detecta"
-**Solución**: Recargue la lista de dispositivos o reinicie la aplicación
-
-### Problema: "Error al procesar video"
-**Solución**: Asegúrese de tener FFmpeg instalado y en el PATH
-
-### Problema: "No se puede escribir archivo temporal"
-**Solución**: Verifique permisos de escritura en la carpeta de grabaciones
-
-### Problema: "AudioFileClip error"
-**Solución**: Instale FFmpeg: `pip install imageio-ffmpeg`
-
-## 🔮 Mejoras futuras planeadas
-
-- [ ] Grabación de región personalizada (captura de área)
-- [ ] Pausa/Reanuda de grabación sin detener
-- [ ] Historial de grabaciones con miniaturas
-- [ ] Editor de video integrado (corte, recorte, watermark)
-- [ ] Soporte para grabación en Linux y macOS
-- [ ] Panel de estadísticas de grabación
-- [ ] Configuración oscura personalizable
-- [ ] Grabación con codificadores de hardware (NVIDIA NVENC, Intel Quick Sync)
-- [ ] API REST para grabación remota
-- [ ] Validación automática de dependencias
-
-## 💻 Requisitos técnicos
-
-| Componente | Versión |
-|-----------|---------|
-| Python | 3.10+ |
-| PyQt6 | 6.0+ |
-| OpenCV | 4.5+ |
-| MoviePy | 1.0+ |
-| NumPy | 1.20+ |
-| SoundDevice | 0.4+ |
-| PyAudio | 0.2+ |
-
-## 📄 Licencia
-
-Este proyecto está bajo licencia MIT. Consulte el archivo LICENSE para más detalles.
-
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## ❓ FAQ
-
-**P: ¿Funciona en Linux o macOS?**
-R: Actualmente está optimizado para Windows. Se requieren ajustes para otros SO.
-
-**P: ¿Cuál es el tamaño de archivo típico?**
-R: Depende de la resolución y duración. ~100-200 MB por minuto de grabación en MP4 HD.
-
-**P: ¿Puedo editar los videos después de grabar?**
-R: Actualmente no, pero es una característica planeada.
-
-**P: ¿Es posible grabar solo una región?**
-R: No en esta versión, es una mejora futura.
-
-## 📧 Contacto
-
-Para reportes de bugs o sugerencias: [tu-email@ejemplo.com]
-
-## 👏 Agradecimientos
-
-- PyQt6 por la interfaz gráfica
-- OpenCV por el procesamiento de video
-- FFmpeg por la codificación de video
-- La comunidad de Python por las herramientas utilizadas
+1. **Seleccionar pantalla**: Elige la pantalla/monitor a grabar.
+2. **Configurar opciones**: Ajusta nombre, formato, audio y cámara web.
+3. **Iniciar grabación**: Presiona "Iniciar" o usa el atajo de teclado (`Ctrl+Alt+R` por defecto).
+4. **Detener grabación**: Presiona "Detener" o usa el atajo.
+5. **Esperar procesamiento**: El video se combina con el audio automáticamente.
 
 ---
 
-**Última actualización**: 7 febrero 2026  
-**Versión**: 1.0.0
+**Última actualización**: 9 febrero 2026  
+**Versión**: 1.2.0

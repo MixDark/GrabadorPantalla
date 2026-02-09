@@ -5,6 +5,28 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
+## [1.2.0] - 2026-02-09
+
+### 🎉 Agregado
+- 📸 **Soporte para cámara web (webcam overlap)**
+  - Previsualización en tiempo real integrada en la interfaz
+  - Superposición automática en la esquina superior derecha del video grabado
+  - Reutilización inteligente del dispositivo para evitar retrasos
+- 🌐 **Soporte UTF-8 completo**
+  - Los logs ahora guardan correctamente tildes y caracteres especiales
+  - Interfaz de registro actualizada con codificación universal
+
+### 🔧 Mejoras técnicas
+- ⚡ **Optimización del inicio de grabación**
+  - Reducción drástica del retraso al iniciar (traspaso instantáneo de cámara)
+  - Mejora en la sincronización de hilos para mayor estabilidad
+- 🛡️ **Robustez en el cierre de archivos**
+  - Corrección de errores críticos que causaban el cierre inesperado al detener
+  - Nuevo flujo secuencial de guardado (video -> audio -> combinación)
+- 🎨 **Pulido de interfaz**
+  - Textos de la interfaz normalizados con inicial mayúscula
+  - Iconos de estado actualizados para mejor visibilidad
+
 ## [1.1.0] - 2026-02-07
 
 ### 🎉 Agregado
