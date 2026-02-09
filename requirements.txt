@@ -1,0 +1,15 @@
+numpy
+sounddevice
+pyaudio
+mss
+opencv-python
+moviepy
+pyqt6
+PyQtWebEngine
+pypiwin32
+screeninfo
+qtawesome
+pywin32
+imageio-ffmpeg
+imageio
+soundfile

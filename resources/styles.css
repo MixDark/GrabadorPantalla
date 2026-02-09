@@ -1,0 +1,247 @@
+QWidget {
+    background-color: rgba(20, 30, 40, 0.7);
+    color: #ecf0f1;
+    font-family: Arial, sans-serif;
+}
+
+QLabel {
+    font-size: 14px;
+    color: #ecf0f1;
+}
+
+QPushButton {
+    background-color: rgba(52, 152, 219, 0.8);
+    color: white;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: rgba(41, 128, 185, 0.8);
+}
+
+QPushButton:pressed {
+    background-color: rgba(31, 98, 155, 0.8);
+}
+
+QPushButton:disabled {
+    background-color: rgba(85, 85, 85, 0.8);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+QComboBox,
+QLineEdit {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(30, 45, 60, 0.8);
+    color: #ecf0f1;
+}
+
+QComboBox:focus,
+QLineEdit:focus {
+    border: 2px solid rgba(52, 152, 219, 0.8);
+}
+
+QTextEdit {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    background-color: rgba(30, 45, 60, 0.8);
+    color: #ecf0f1;
+    font-family: "Courier New", monospace;
+}
+
+QProgressBar {
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(30, 45, 60, 0.8);
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+QProgressBar::chunk {
+    background-color: rgba(52, 152, 219, 0.8);
+    width: 20px;
+}
+
+
+
+
+
+/* --- CHECKBOX COMO SWITCH SIMPLE Y COMPATIBLE QT --- */
+
+
+QCheckBox {
+    font-size: 14px;
+    color: #ecf0f1;
+    spacing: 12px;
+    padding: 7px 0px;
+    font-weight: 600;
+}
+
+QCheckBox::indicator {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: #1a2633;
+    border: 2px solid #3498db;
+    margin-right: 10px;
+}
+
+QCheckBox::indicator:unchecked {
+    background: #1a2633;
+    border: 2px solid #3498db;
+}
+
+QCheckBox::indicator:unchecked:hover {
+    background: #223344;
+    border: 2px solid #5dade2;
+}
+
+QCheckBox::indicator:checked {
+    background: #3498db;
+    border: 2px solid #217dbb;
+    image: url(:/qt-project.org/styles/commonstyle/images/checkbox_checked.png);
+}
+
+QCheckBox::indicator:checked:hover {
+    background: #217dbb;
+    border: 2px solid #5dade2;
+}
+
+QCheckBox::indicator:disabled {
+    background: #888888;
+    border: 2px solid #cccccc;
+}
+
+/* Mejora de campos de entrada */
+QSpinBox,
+QDoubleSpinBox,
+QComboBox {
+    font-size: 16px;
+    padding: 2px 4px;
+    min-width: 0px;
+    min-height: 24px;
+    border-radius: 7px;
+}
+
+
+QComboBox {
+    /* min-width y max-width eliminados para respetar el tamaño desde Python */
+    padding-left: 8px;
+    padding-right: 12px;
+    font-size: 15px;
+    background-color: rgba(30, 45, 60, 0.8);
+    color: #ecf0f1;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+QSlider::groove:horizontal {
+    background-color: rgba(30, 45, 60, 0.8);
+    height: 8px;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background-color: rgba(52, 152, 219, 0.8);
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::handle:horizontal:hover {
+    background-color: rgba(41, 128, 185, 0.8);
+}
+
+QTabWidget::pane {
+    border: 1px solid rgba(30, 45, 60, 0.8);
+}
+
+QTabBar::tab {
+    background: rgba(30, 45, 60, 0.8);
+    color: #ecf0f1;
+    padding: 8px 15px;
+    font-size: 13px;
+    min-width: 120px;
+    min-height: 30px;
+    margin: 0 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+QTabBar::tab:selected {
+    background: rgba(52, 152, 219, 0.8);
+    color: white;
+}
+
+QTabBar::tab:hover: !selected {
+    background: rgba(40, 60, 80, 0.8);
+}
+
+QSpinBox,
+QDoubleSpinBox {
+    background-color: rgba(30, 45, 60, 0.8);
+    color: #ecf0f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QScrollBar:vertical {
+    background-color: rgba(30, 45, 60, 0.8);
+    width: 12px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgba(52, 152, 219, 0.8);
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: rgba(41, 128, 185, 0.8);
+}
+
+QMessageBox {
+    background-color: rgba(20, 30, 40, 0.9);
+}
+
+QMessageBox QLabel {
+    color: #ecf0f1;
+}
+
+/* Estilos personalizados */
+.title-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(52, 152, 219, 0.9);
+}
+
+.recording-active {
+    background-color: rgba(231, 76, 60, 0.9);
+    color: white;
+    font-weight: bold;
+}
+
+.success-label {
+    color: rgba(39, 174, 96, 0.9);
+}
+
+.error-label {
+    color: rgba(231, 76, 60, 0.9);
+}
+
+.warning-label {
+    color: rgba(241, 196, 15, 0.9);
+}

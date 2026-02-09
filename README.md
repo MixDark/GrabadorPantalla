@@ -1,66 +1,206 @@
-# Grabador de pantalla
+# 🎬 Grabador de Pantalla
 
-## Descripción
-Una aplicación creada con PyQt6 para grabar la pantalla del computador, tambien captura audio del sistema y del microfono.
+Una aplicación profesional de grabación de pantalla desarrollada en Python con interfaz gráfica PyQt6, diseñada para capturar, procesar y guardar videos de alta calidad.
 
-## Capturas de pantalla
-![1](https://github.com/user-attachments/assets/986ff664-156c-4af8-a8f2-26b2af397db6)
+## 📋 Características
 
-![2](https://github.com/user-attachments/assets/ed3f34d1-a42e-427d-bcbd-dd5e1076bdc2)
+### 🎥 Grabación de video
+- ✅ Soporte para múltiples pantallas/monitores
+- ✅ Grabación en tiempo real con FPS ajustable (actualmente 15 FPS)
+- ✅ Múltiples formatos de salida: MP4, AVI, MOV
+- ✅ Captura de región completa de la pantalla
 
-![3](https://github.com/user-attachments/assets/4ed1d90f-312f-4b76-a086-1d706fa0bc76)
+### 🎙️ Audio
+- ✅ Grabación de audio del micrófono
+- ✅ Soporte para micrófono de múltiples canales
+- ✅ Control de volumen del micrófono
+- ✅ Prueba de micrófono integrada
+- ✅ Grabación de audio del sistema (cuando está disponible)
+- ✅ Normalización y compresión de audio
 
+### 🖱️ Personalización del cursor
+- ✅ Mostrar/ocultar cursor durante grabación
+- ✅ Múltiples estilos: Predeterminado, círculos (blanco, rojo, verde, azul), cruz
 
-## Características
-- Es compatible con Windows
-- Reconoce varias pantallas y permite elegir la que se quiera grabar
-- Soporte para formatos de video como mp4, avi, mov
-- Cursor en cruz, preterminado o en circulo de diferentes colores
-- Opciones para grabar audio del sistema y el microfono
-- Opción para probar el microfono
-- Opción para establecer un atajo de teclado
-- Opción para minimizar la aplicación mientas se esta grabando
-- Opciones para cambiar el nombre del archivo, elegir la ubicación de almacenamiento y abrir la carpeta 
-- Interfaz simple e intuitiva
-- Pestaña donde se muestra el registro de eventos
+### ⌨️ Atajos de teclado
+- ✅ Atajos de teclado personalizables para iniciar/detener grabación
+- ✅ Configuración global del atajo
+- ✅ Minimizar ventana automáticamente al iniciar
 
-## Tecnologías utilizadas
-- Python 3.x
-- pyqt6
-- opencv-python
-- sounddevice
-- pyaudio
+### 📊 Interfaz de usuario
+- ✅ Interfaz con 3 pestañas (Grabación, Configuraciones, Registro)
+- ✅ Previsualizaciones de pantallas disponibles
+- ✅ Contador de tiempo en vivo
+- ✅ Barra de progreso
+- ✅ Registro de eventos detallado
 
-## Requerimientos
-- Python 3.x 
-- numpy
-- sounddevice
-- pyaudio
-- mss
-- opencv-python
-- moviepy
-- pyqt6
-- PyQtWebEngine
-- pypiwin32
-- screeninfo
-- qtawesome
-- pywin32
+### 📁 Gestión de archivos
+- ✅ Seleccionar ubicación personalizada para grabaciones
+- ✅ Acceso rápido a la carpeta de grabaciones
+- ✅ Verificación de archivos existentes antes de sobrescribir
 
-## Instalación desde CLI
-1. Clona el repositorio: 
-git clone https://github.com/MixDark/GrabadorPantalla.git
-2. Instala las dependencias:
+## 🚀 Requisitos previos
+
+### Sistema operativo
+- Windows 10/11 (actualmente optimizado para Windows con APIs específicas)
+
+### Python
+- Python 3.10 o superior
+
+### Dependencias del sistema
+- FFmpeg (recomendado para mejor compatibilidad de video)
+
+## 📦 Instalación
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/tu-usuario/grabador-pantalla.git
+cd grabador-pantalla
+```
+
+### 2. Crear entorno virtual (opcional pero recomendado)
+```bash
+python -m venv venv
+venv\Scripts\activate  # En Windows
+```
+
+### 3. Instalar dependencias
+```bash
 pip install -r requirements.txt
-3. Ejecuta la aplicación:
+```
+
+### 4. Instalar dependencias del sistema (Windows)
+```bash
+pip install pypiwin32
+python Scripts/pywin32_postinstall.py -install
+```
+
+## 🎯 Uso
+
+### Ejecutar la aplicación
+```bash
 python main.py
+```
 
-## Uso
-1. Abre la aplicación y elige una pantalla
-2. Haz clic en el boton "Iniciar" para que empiece a grabar
-3. Haz clic en el boton "Detener" y esperar a que la grabación se guarde.
-4. Si deseas personalización lo puedes hacer en la pestaña "Configuraciones"
+### Flujo básico:
+1. **Seleccionar pantalla**: Elige la pantalla/monitor a grabar
+2. **Configurar opciones**: Ajusta nombre, formato, audio y cursor
+3. **Iniciar grabación**: Presiona "Iniciar" o usa el atajo de teclado
+4. **Detener grabación**: Presiona "Detener" o usa el atajo
+5. **Esperar procesamiento**: El video se procesa y guarda automáticamente
 
-## Estructura del proyecto
+## ⚙️ Configuración
 
-![image](https://github.com/user-attachments/assets/07d90220-c425-421b-98f4-70364a31766e)
+La aplicación permite personalizar:
 
+- **Nombre de archivo**: Nombre personalizado para la grabación
+- **Formato**: .mp4, .avi, .mov
+- **Ubicación**: Dónde guardar las grabaciones
+- **Audio del micrófono**: Activar/desactivar y ajustar volumen
+- **Audio del sistema**: Activar/desactivar y ajustar volumen
+- **Estilo del cursor**: Diferentes opciones de visualización
+- **Atajo de teclado**: Configurar combinación para iniciar/detener
+- **Minimizar al iniciar**: Ocultar ventana automáticamente
+
+## 📝 Registro de eventos
+
+Todos los eventos de la aplicación se registran en:
+- **Pantalla**: En la pestaña "Registro de eventos"
+- **Archivo**: En `app.log` en el directorio raíz
+
+## 🛠️ Estructura del proyecto
+
+```
+grabador-pantalla/
+├── main.py                 # Aplicación principal
+├── requirements.txt        # Dependencias Python
+├── README.md              # Este archivo
+├── CHANGELOG.md           # Historial de cambios
+├── .gitignore             # Archivos a ignorar en git
+├── app.log                # Registro de eventos
+└── grabaciones/           # Carpeta de grabaciones
+    └── tmp/               # Archivos temporales durante grabación
+```
+
+## 🐛 Solución de problemas
+
+### Problema: "El micrófono no se detecta"
+**Solución**: Recargue la lista de dispositivos o reinicie la aplicación
+
+### Problema: "Error al procesar video"
+**Solución**: Asegúrese de tener FFmpeg instalado y en el PATH
+
+### Problema: "No se puede escribir archivo temporal"
+**Solución**: Verifique permisos de escritura en la carpeta de grabaciones
+
+### Problema: "AudioFileClip error"
+**Solución**: Instale FFmpeg: `pip install imageio-ffmpeg`
+
+## 🔮 Mejoras futuras planeadas
+
+- [ ] Grabación de región personalizada (captura de área)
+- [ ] Pausa/Reanuda de grabación sin detener
+- [ ] Historial de grabaciones con miniaturas
+- [ ] Editor de video integrado (corte, recorte, watermark)
+- [ ] Soporte para grabación en Linux y macOS
+- [ ] Panel de estadísticas de grabación
+- [ ] Configuración oscura personalizable
+- [ ] Grabación con codificadores de hardware (NVIDIA NVENC, Intel Quick Sync)
+- [ ] API REST para grabación remota
+- [ ] Validación automática de dependencias
+
+## 💻 Requisitos técnicos
+
+| Componente | Versión |
+|-----------|---------|
+| Python | 3.10+ |
+| PyQt6 | 6.0+ |
+| OpenCV | 4.5+ |
+| MoviePy | 1.0+ |
+| NumPy | 1.20+ |
+| SoundDevice | 0.4+ |
+| PyAudio | 0.2+ |
+
+## 📄 Licencia
+
+Este proyecto está bajo licencia MIT. Consulte el archivo LICENSE para más detalles.
+
+## 🤝 Contribuir
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## ❓ FAQ
+
+**P: ¿Funciona en Linux o macOS?**
+R: Actualmente está optimizado para Windows. Se requieren ajustes para otros SO.
+
+**P: ¿Cuál es el tamaño de archivo típico?**
+R: Depende de la resolución y duración. ~100-200 MB por minuto de grabación en MP4 HD.
+
+**P: ¿Puedo editar los videos después de grabar?**
+R: Actualmente no, pero es una característica planeada.
+
+**P: ¿Es posible grabar solo una región?**
+R: No en esta versión, es una mejora futura.
+
+## 📧 Contacto
+
+Para reportes de bugs o sugerencias: [tu-email@ejemplo.com]
+
+## 👏 Agradecimientos
+
+- PyQt6 por la interfaz gráfica
+- OpenCV por el procesamiento de video
+- FFmpeg por la codificación de video
+- La comunidad de Python por las herramientas utilizadas
+
+---
+
+**Última actualización**: 7 febrero 2026  
+**Versión**: 1.0.0
